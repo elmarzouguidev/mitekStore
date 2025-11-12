@@ -91,7 +91,7 @@
     "repositories": {
         "nova": {
             "type": "path",
-            "url": "./nova"
+            "url": "./thenovapp"
         }
     }
 }

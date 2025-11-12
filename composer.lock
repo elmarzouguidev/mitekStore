@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7d10c4c87f9b167f973fcc43196025ed",
+    "content-hash": "18cd37ab40475da11181e1621940cedd",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -1572,7 +1572,7 @@
             "version": "5.7.6",
             "dist": {
                 "type": "path",
-                "url": "./nova",
+                "url": "./thenovapp",
                 "reference": "624a7bb3804637ebfa0d81fc98c28745c9ca7d54"
             },
             "require": {
