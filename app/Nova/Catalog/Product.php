@@ -4,6 +4,7 @@ namespace App\Nova\Catalog;
 
 use App\Nova\Resource;
 use Ebess\AdvancedNovaMediaLibrary\Fields\Files;
+use Ebess\AdvancedNovaMediaLibrary\Fields\Images;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\ID;
@@ -54,13 +55,15 @@ class Product extends Resource
     {
         return [
             ID::make()->sortable(),
-            Text::make('Name')->sortable(),
+            Text::make('Name')->sortable()->rules(['required']),
             Textarea::make('Excerpt')->alwaysShow()->maxlength(250),
-            Trix::make('Content'),
+            Trix::make('Content')->rules(['required']),
             BelongsTo::make('Category')->display('name'),
 
-            Files::make('Image', 'one_file')->enableExistingMedia(),
-            //Files::make('Multiple files', 'multiple_files'),
+            //Files::make('Image', 'one_file')->enableExistingMedia(),
+            Images::make('Main image', 'product_images')
+                ->enableExistingMedia()
+                ->rules(['required']), // validation rules
         ];
     }
 
