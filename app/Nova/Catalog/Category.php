@@ -5,6 +5,8 @@ namespace App\Nova\Catalog;
 use App\Nova\Resource;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class Category extends Resource
@@ -49,6 +51,8 @@ class Category extends Resource
     {
         return [
             ID::make()->sortable(),
+            Text::make('Name')->sortable(),
+            Textarea::make('Content')->alwaysShow()->maxlength(250),
         ];
     }
 
@@ -92,7 +96,7 @@ class Category extends Resource
         return [];
     }
 
-        /**
+    /**
      * Get the displayable label of the resource.
      *
      * @return string

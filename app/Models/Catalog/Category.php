@@ -2,14 +2,19 @@
 
 namespace App\Models\Catalog;
 
+use App\Traits\GetModelByKeyName;
+use App\Traits\HasSlug;
 use App\Traits\UuidGenerator;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Category extends Model
 {
     //
 
     use UuidGenerator;
+    use GetModelByKeyName;
+    use HasSlug;
 
     /**
      * Get the attributes that should be cast.
@@ -22,5 +27,10 @@ class Category extends Model
             'is_active' => 'boolean',
             'is_valide' => 'boolean',
         ];
+    }
+
+    public function products(): HasMany
+    {
+        return $this->hasMany(Product::class);
     }
 }

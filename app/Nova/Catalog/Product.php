@@ -3,10 +3,14 @@
 namespace App\Nova\Catalog;
 
 use App\Nova\Resource;
+use Ebess\AdvancedNovaMediaLibrary\Fields\Files;
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Textarea;
+use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class Product extends Resource
@@ -51,7 +55,12 @@ class Product extends Resource
         return [
             ID::make()->sortable(),
             Text::make('Name')->sortable(),
-            Slug::make('Slug')->from('Name'),
+            Textarea::make('Excerpt')->alwaysShow()->maxlength(250),
+            Trix::make('Content'),
+            BelongsTo::make('Category')->display('name'),
+
+            Files::make('Image', 'one_file')->enableExistingMedia(),
+            //Files::make('Multiple files', 'multiple_files'),
         ];
     }
 
