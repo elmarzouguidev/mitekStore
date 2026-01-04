@@ -12,8 +12,8 @@ class HomeController extends Controller
 
     public function index()
     {
-        $products =  Product::all();
-
-        dd($products);
+        $products =  Product::find(3);
+        $mediaItems = $products->getMedia("product_images");
+        dd($mediaItems);
     }
 }

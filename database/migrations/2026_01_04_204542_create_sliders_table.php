@@ -17,7 +17,6 @@ return new class extends Migration
             $table->string('title');
             $table->mediumText('content')->nullable();
             $table->string('url')->nullable();
-            
 
             $table->activeFields();
             $table->timestamps();

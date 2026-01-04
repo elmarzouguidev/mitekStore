@@ -16,8 +16,6 @@ class Slider extends Model implements HasMedia
     use InteractsWithMedia;
 
 
-
-
     /**
      * Get the attributes that should be cast.
      *
