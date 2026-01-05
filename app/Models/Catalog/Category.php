@@ -25,7 +25,7 @@ class Category extends Model
     {
         return [
             'is_active' => 'boolean',
-            'is_valide' => 'boolean',
+            'is_valid' => 'boolean',
         ];
     }
 

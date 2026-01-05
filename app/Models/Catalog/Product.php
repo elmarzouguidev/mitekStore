@@ -27,7 +27,7 @@ class Product extends Model implements HasMedia
     {
         return [
             'is_active' => 'boolean',
-            'is_valide' => 'boolean',
+            'is_valid' => 'boolean',
         ];
     }
 
